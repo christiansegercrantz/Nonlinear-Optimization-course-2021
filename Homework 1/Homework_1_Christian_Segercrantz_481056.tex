@@ -106,7 +106,54 @@
 		(y-\bar{y})^\top(\bar{x} - \bar{y}) \geq 0.
 	\end{equation}
 \section*{1.3}
+	\subsection*{(a)}
+		$a^\top x \geq \alpha$ and $a^\top x \geq \beta$ form half-spaces. Since $\alpha\leq\beta$ that are two options:
+		\begin{enumerate}
+			\item $\alpha = \beta \implies $ we have a hyperplane which is convex.
+			\item $\alpha < \beta$ which is the area between two hyperplanes i.e. the intersection of half-spaces which is convex.
+		\end{enumerate}	
+		The set is thus convex.
+	\subsection*{(b)}
+		For a convex set it needs to hold that $\lambda x + (\lambda-1) y$
+	\subsection*{(c)}
+		The sets $a_1^\top x\leq b_1$ and $a_2^\top x\leq b_2$ form two half-spaces. Similarly part (a), there are two outcomes
+		\begin{enumerate}
+			\item The intersection of the half-spaces are empty $S=\emptyset$
+			\item The intersection is non-empty $S\neq\emptyset$.
+		\end{enumerate}
+		A empty set is by definition convex. We know from exercise 2.1 we know that the intersection of convex sets are also convex. Since half-spaces are convex by lecture 2 slide 6 the set $S$ is convex.
+	\subsection*{(d)}
+		
 \section*{1.4}
+	\subsection*{(a)}
+	Let us call $h(x) = Ax + b$.
+	By lecture 3, slide 4 we know that that $f(x)$ is convex if $f(x) = g(h(x))$ if $g(x)$ is convex and $h(x)$ is affine. We can thus conclude that $f(x) = g(Ax+b)$
+	\subsection*{(b)}
+	Let $f(x)=\alpha h(x) + \beta$.
+	By the definition of convex function we set
+	\begin{equation}
+		f(\lambda x + (1-\lambda) y ) =
+		\alpha h(\lambda x + (1-\lambda) y ) + \beta.
+	\end{equation}
+	As we know that $h(x)$ is convex we can set
+	\begin{align}
+		\leq& \alpha (\lambda h(x) + (1-\lambda) h(y) ) + \beta \\
+		= &\lambda \alpha h(x) + (1-\lambda)\alpha h(y) + \beta \\
+		= & \lambda \alpha h(x) + \lambda\beta + (1-\lambda)\alpha h(y) + (1-\lambda)\beta \\
+		=& \lambda (\alpha h(x) + \lambda) + (1-\lambda)(\alpha h(y) + \beta) \\
+		=& \lambda f(x) + (1-\lambda)f(x)
+	\end{align}
+	Which proves that our function $f(x)$ is convex.
+	\subsection*{(c)}
+	Let $f(x) = e^{\beta x^\top A x}$ and A a positive semidefinite matrix $x^\top A x \geq 0$. Let $g(x)=e^x$ and $h(x)=\beta x^\top A x$. We know that $g(x)$ is a convex as per the lecture 3 slide 3. For a non-decreasing function it holds that $f'(x)\geq 0$. For $g(x)$ it means that $x\geq 0$.
+	
+	We can show that $h(x)$ is concave by showing that the Hessian of it is positive semidefinite, as per Theorem 12, lecture 3
+	\begin{equation}
+		H(h(x)) = \nabla^2 \beta x^\top A x = \beta 2 A
+	\end{equation}
+	We know that $\beta > 0$ and as stated before that the matrix A is positive semidefinite and thus the Hessian is positive semidefinite.
+	
+	By lecture 3 slide 4, we know that $g(h(x))$ is convex as long as $g(x)$ is a convex non-decreasing function and $h(x)$ is convex and positive-semidefinite. We have thus shown that $f(x) = e^{\beta x^\top A x}$ is convex.
 
 \begin{figure}[H]
 	\centering
