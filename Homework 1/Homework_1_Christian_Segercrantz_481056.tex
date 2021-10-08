@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage[margin=3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\title{Nonlinear Optimization - Homework 1 }
+\author{Christian Segercrantz 481056}
+
+\begin{document}
+	\maketitle
+	\pagebreak
+\section*{1.1}
+	%First non-empty and convex
+	%Theorem 2
+	% ξ > (x − x) ≥ 0 for all x ∈ S
+	We will first examine weather the set is non-empty and convex. We can see that the set is non-empty by finding a number that is contained in the set. Let us examine the point (1,1). The set is subject to $x_2 \geq x_1^2$ and $x_2 \leq 4$ and by inserting the point (1,1) into the conditions we get $1 \geq 1$ and $1 \leq 4$ which both hold. The set is thus non-empty.
+	
+%	By the definition of a convex function
+%	$f(\lambda x_1 + (1 - \lambda)x_2 ) \leq \lambda f(x_1 ) + (1 - \lambda)f(x_2)$ we can examine wheater our function is convex. 
+%	\begin{align}
+%			((\lambda x_{1,1}+(1-\lambda)x_{2,1})-4)^2 + ((\lambda x_{1,2}+(1-\lambda)x_{2,2}) - 6)^2 & \leq \\
+%			\lambda (( x_{1,1} - 4)^2 + ( x_{2,1} - 6)^2) + (1-\lambda) ((x_{2,1} - 4)^2 + (x_{2,2} - 6)^2) &
+%	\end{align}
+%Which we can see by solving analytically holds and the function is thus convex.
+	From lecture 3, slide 3 we know that polynomial functions are convex functions. Since we have the sum of two second degree polynomial functions in different dimensions we can conclude that the function is convex. The epigraph of a convex function is also convex and the set is thus convex.
+	
+	The necessary optimality condition for our nonempty convex set is $\xi^\top (x -\bar{x}) \geq  0$. It is known that second degree functions are differentiable, and thus we know that $\xi = \nabla f(\bar{x})$. Thus the condition becomes
+	\begin{equation}
+		\nabla f(\bar{x})^\top (x -\bar{x}) \geq 0.
+	\end{equation}
+	The gradient becomes 
+	\begin{equation}
+		\nabla f(\bar{x}) = 
+		\begin{bmatrix}
+			2(\bar{x}_1-4) \\
+			2(\bar{x}_2-6)
+		\end{bmatrix}.
+	\end{equation}
+	The gradient at (2,4) becomes 
+		\begin{equation}
+		\nabla f(2,4) = 
+		\begin{bmatrix}
+			2(2-4) \\
+			2(4-6)
+		\end{bmatrix} =
+		\begin{bmatrix}
+			-4 \\
+			-4
+		\end{bmatrix} .
+	\end{equation}
+%	which means our expression becomes
+%	\begin{align}
+%		\begin{bmatrix}
+%			2(\bar{x}_1-4) &
+%			2(\bar{x}_2-6)
+%		\end{bmatrix}
+%		\left(\begin{bmatrix}
+%			x_1 \\ x_2
+%		\end{bmatrix} -
+%		\begin{bmatrix}
+%			\bar{x}_1 \\ \bar{x}_2
+%		\end{bmatrix}\right)
+%		& \geq 0. \\
+%		\begin{bmatrix}
+%			2(\bar{x}_1-4) &
+%			2(\bar{x}_2-6)
+%		\end{bmatrix}
+%		\begin{bmatrix}
+%			x_1-\bar{x}_1 \\ x_2-\bar{x}_2
+%		\end{bmatrix}	& \geq 0. \\
+%		2(\bar{x}_1-4)(x_1-\bar{x}_1) + 2(\bar{x}_2-6)(x_2-\bar{x}_2) & \geq 0 \\
+%		2((\bar{x}_1 x_1 - \bar{x}_1^2 +4\bar{x}_1) + (\bar{x}_2 x_2 - \bar{x}_2^2 + 6\bar{x}_2 )) &\geq 0
+%	\end{align}
+	The complete expression then becomes 
+	\begin{align}
+		\nabla f(\bar{x})^\top (x -\bar{x}) &\geq 0 \\
+			\begin{bmatrix}
+			-4 &
+			-4
+		\end{bmatrix}
+		\left(\begin{bmatrix}
+			x_1 \\ x_2
+		\end{bmatrix} -
+		\begin{bmatrix}
+			2 \\ 4
+		\end{bmatrix}\right)
+		& \geq 0 \\
+		-4(x_1 - 2 + x_2 -4) = -4(x_1 + x_2 -6) & \geq 0
+	\end{align}
+	Due to our constraints of the function, choosing the largest possible values for x will result in the outcome $0\geq 0$ and any other value will result in a the LHS being greater than 0 since the parenthesis will be negative and the product, thus, result in a non-negative value. We have thus proven that the point (2,4) is optimal. Based on Theorem 1 in lecture 3, a optimal point of a convex function is a globally optimal point.
+
+\section*{1.2}
+	The closest point theorem says that $(x-\bar{x})^\top (x'-\bar{x})$ for any point x not in the convex set S and any point x' in the set S the point $\bar{x}$ is the closest point in the set S to y.
+	Let's choose our point x' in the S to be $\bar{y}$ for x and $\bar{x}$ for y. Our two closest-point equations thus become
+	\begin{equation}
+		(x-\bar{x})^\top(\bar{y} - \bar{x}) \geq 0
+	\end{equation}
+	and
+	\begin{equation}
+		(y-\bar{y})^\top(\bar{x} - \bar{y}) \geq 0.
+	\end{equation}
+\section*{1.3}
+\section*{1.4}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{plots/1_4c_contour.png}
+	\caption{The contour plot of 1.4c}
+	\label{fig:1.4c}
+\end{figure}
+
+\end{document}
