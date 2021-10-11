@@ -103,8 +103,29 @@
 	\end{equation}
 	and
 	\begin{equation}
-		(y-\bar{y})^\top(\bar{x} - \bar{y}) \geq 0.
+		(y-\bar{y})^\top(\bar{x} - \bar{y}) \geq 0. \label{eq:y_dist}
 	\end{equation}
+	Further we know that $||a-b||^2 = (a - b)^\top(a-b)$ for any $a,b\in \mathbb{R}^n$.
+	We can thus write
+	\begin{equation} 
+		||\bar{x} - \bar{y}||^2 = (\bar{x} - \bar{y})^\top(\bar{x}-\bar{y}) 
+	\end{equation}
+	and add both the distances distances to the RHS. We will negate both equations so that they are greater than or equal to zero.
+	\begin{align}
+		||\bar{x} - \bar{y}||^2 \leq & (\bar{x} - \bar{y})^\top(\bar{x}-\bar{y}) + (\bar{y} - y)^\top(\bar{x} - \bar{y}) + (x-\bar{x})^\top(\bar{y} - \bar{x}) \\
+		\leq & ((\bar{x} + \bar{y})^\top + (\bar{y} - y)^\top + (x-\bar{x})^\top)(\bar{x} - \bar{y}).
+	\end{align}
+	We can now open up the transpose parenthesis and simplify the expression into
+	\begin{equation}
+		||\bar{x} - \bar{y}||^2 \leq (x^\top - y^\top)(\bar{x}-\bar{y}) = (x - y)^\top(\bar{x}-\bar{y}).
+	\end{equation}
+	We can now use the Cauchy–Schwarz inequality to show that
+	 \begin{align}
+	 	 (x - y)^\top(\bar{x}-\bar{y}) \leq &  ||x-y||\cdot||\bar{x}-\bar{y}||\\ 
+	 	 \implies ||\bar{x} - \bar{y}||^2 \leq & ||x-y||\cdot||\bar{x}-\bar{y}|| \\
+	 	||\bar{x} - \bar{y}|| \leq & ||x-y||
+	 \end{align}
+ 	which was what we wanted to show.
 \section*{1.3}
 	\subsection*{(a)}
 		$a^\top x \geq \alpha$ and $a^\top x \geq \beta$ form half-spaces. Since $\alpha\leq\beta$ that are two options:
@@ -123,11 +144,15 @@
 		\end{enumerate}
 		A empty set is by definition convex. We know from exercise 2.1 we know that the intersection of convex sets are also convex. Since half-spaces are convex by lecture 2 slide 6 the set $S$ is convex.
 	\subsection*{(d)}
-		By the definition of a convex set, the point $\bar{x}$ will belong to the set S as $\bar{x} = \lambda x_1 + (1-\lambda) x_2$ where $x_1,x_2 \in S$. 
-		
-		\begin{equation}
-			asd
-		\end{equation}
+		By the definition of a convex set, the point $x$ will belong to the set S as $x = \lambda x_1 + (1-\lambda) x_2$ where $x_1,x_2 \in S$ and $0 \leq \lambda \leq 1. $
+		In order for the set to be convex we show the following:
+		\begin{align}
+			x&= A^\top y \\
+			 &= A^\top(\lambda y_1 + (1-\lambda)y_2) \\
+			 &= \lambda A^\top y_1 + (1-\lambda)A^\top y_2 \\
+			x &= \lambda x_1 + (1-\lambda)x_2.
+		\end{align}
+		As we can see, any two points $y_1,y_2$ belong to the set. The set is thus convex.
 		
 \section*{1.4}
 	\subsection*{(a)}
