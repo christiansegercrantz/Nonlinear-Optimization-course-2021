@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.22)  18 OCT 2021 20:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.22)  20 OCT 2021 11:53
 entering extended mode
 **./Homework_2_Christian_Segercrantz_481056.tex
 (Homework_2_Christian_Segercrantz_481056.tex
@@ -315,7 +315,7 @@ File: plots/H21_surface.png Graphic file (type png)
 Package pdftex.def Info: plots/H21_surface.png  used on input line 27.
 (pdftex.def)             Requested size: 354.86412pt x 236.58838pt.
  [2 <./plots/H21_surface.png>]
-Overfull \hbox (17.384pt too wide) in paragraph at lines 91--92
+Overfull \hbox (17.384pt too wide) in paragraph at lines 101--102
 \OT1/cmr/m/n/10 To find the min-i-mum for $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\
 OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$ in the di-rec-tion d= $[]$ we must cal-cu-l
 ate the step size $[] = [][]\OML/cmm/m/it/10 d[]\OMS/cmsy/m/n/10 r\OT1/cmr/m/n/
@@ -326,11 +326,11 @@ ate the step size $[] = [][]\OML/cmm/m/it/10 d[]\OMS/cmsy/m/n/10 r\OT1/cmr/m/n/
 Here is how much of TeX's memory you used:
  4395 strings out of 492946
  66073 string characters out of 3135480
- 142064 words of memory out of 3000000
+ 145064 words of memory out of 3000000
  8223 multiletter control sequences out of 15000+200000
  14298 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,39p,433b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,14n,39p,680b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
@@ -345,7 +345,7 @@ pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb>
-Output written on Homework_2_Christian_Segercrantz_481056.pdf (3 pages, 244481 
+Output written on Homework_2_Christian_Segercrantz_481056.pdf (3 pages, 247680 
 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)

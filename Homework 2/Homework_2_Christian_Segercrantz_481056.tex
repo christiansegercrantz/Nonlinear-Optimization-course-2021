@@ -43,7 +43,17 @@
 		2x^2-1 = 0 \iff x= \pm\sqrt{1/3}.
 	\end{equation}
 	This gives us the four points $(\sqrt{1/3},\sqrt{1/3})$, $(-\sqrt{1/3},\sqrt{1/3})$, $(\sqrt{1/3},-\sqrt{1/3})$, and $(-\sqrt{1/3},-\sqrt{1/3})$.
-
+\subsection*{(c)}
+	We calculate the hessian from the gradient and receive 
+	\begin{equation}
+		Hf(x) = \begin{bmatrix}
+			6x_1 & 0 \\
+			0 & 6x_2
+		\end{bmatrix} 
+	\end{equation}
+	In order for us to know how the function behaves, we need to examine the semi-definiteness of the Hessian. A positive semi-definite matrix has all of its eigenvalues non-negative and vice verse for a negative semi-definite matrix for all x. Additionally, a convex(/concave) functions hessian, if twice differentiable, is positive(/negative) semi-definite. The two eigen values of the function is $\lambda_1 = 6x_1$ and $\lambda_2 = 6x_2$. We can see that only for values where both $x_1$ and $x_2$ are non-negative(/-positive) is the hessian positive(/negative) semi-definite. In other words, the function is not convex(concave). 
+	
+	Using Julia we can solve the eigen values in order to get the curvature around the points. The point $(\sqrt{1/3},\sqrt{1/3})$ has all positive eigen values, $(-\sqrt{1/3},-\sqrt{1/3})$ has all negative eigen values and the other two one positive and one negative. From this we can conclude that $(\sqrt{1/3},\sqrt{1/3})$ is a local minima, $(-\sqrt{1/3},-\sqrt{1/3})$ a local maxima and the two others saddle points. 
 \section*{2.2}
 	\begin{equation}
 		f(x_1,x_2) = 2x^2_1 -x_1x_2+x_2^2 -3x_1 + e^{2x_1+x_2}
