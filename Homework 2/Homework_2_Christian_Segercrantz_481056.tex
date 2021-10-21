@@ -100,7 +100,7 @@
 \subsection*{(c)}
 	To find the minimum for $f(x)$ in the direction d= $\begin{bmatrix}1 \\ 0\end{bmatrix}$ we must calculate the step size $\bar{\lambda}=\text{argmin}_{\lambda} d^\top \nabla f(x+ \lambda d)$. 
 	\begin{align}
-		&\begin{bmatrix}
+		\theta'(\lambda)= &\begin{bmatrix}
 			1 & 0
 		\end{bmatrix}
 		\nabla f
@@ -127,23 +127,31 @@
  		1 & 0
  	\end{bmatrix}
 	\begin{bmatrix}
- 		4(x_1-\lambda)-x_2 -3+ 2 e^{2 (x_1-\lambda) + x_2 } \\
- 		-(x_1-\lambda)+2x_2 + e^{2(x_1-\lambda)+x_2)}
+ 		4(x_1+\lambda)-x_2 -3+ 2 e^{2 (x_1+\lambda) + x_2 } \\
+ 		-(x_1+\lambda)+2x_2 + e^{2(x_1+\lambda)+x_2)}
  	\end{bmatrix} \\
  	 =&
- 		-5\lambda-x_2 + 4x_1-3+ 2 e^{-2\lambda + 2 x_1 + x_2 } \\
+ 		4\lambda-x_2 + 4x_1-3+ 2 e^{2\lambda + 2 x_1 + x_2 } \\
 	\end{align}
-	In order to minimize it we take the derivative of the last line with regards to $\lambda$ and equal it to zero.
+	We substitute $(x_1,x_2)$ the point $(0,0)$ now and get
+	\begin{equation}
+		\theta'(\lambda)= 4\lambda +2 e^{2\lambda}.
+	\end{equation}
+	In order for this to be optimal we set the point zero and solve for $\lambda$:
 	\begin{align}
-		 \frac{d}{d\lambda}\left(-5\lambda-x_2 + 4x_1-3+ 2 e^{-2\lambda + 2 x_1 + x_2 }\right) & = 0\\
-		 -5-e^{-2\lambda + 2 x_1 + x_2 } & = 0\\
+		0 &= 4 \lambda + 2e^{2\lambda}\\
+		\implies \lambda &= \frac{1}{4} (3 - 2 W(e^{3/2})) \approx 0.118,
 	\end{align}
+	where W is the log product function.
+	
+	We can now calculate the new point now by noticing that $\lambda d = \begin{bmatrix} \lambda \\ 0 \end{bmatrix}$. Since the starting point is $(0,0)$ we get the new point by simply setting $f(\lambda,0) \approx 0,94$.
+	
 \section*{2.3}
 \begin{table}[H]
 	The code can be seen in the attached jupyter notebook.
 	The iterations of all three methods can be seen from Table \ref{tab:iterations}. Since they can easily been seen from the table, the answers have not been split into a-d parts.
 	
-	In the case of the Newton method, we are not only employing first-order derivative information but also second order derivative information. This leads to a more complex computations but need for less iterations. 
+	In the case of the Newton method, we are not only employing first-order derivative information but also second order derivative information. This leads to a more complex computations but need for less iterations. For the conjugate gradient, which we can see lies between the gradient and newton methods in iteration amount, we are not directly using the Hessian but still using more information than in the gradient method.
 	
 	For the Conjugate gradient method, 
 	\centering
@@ -152,8 +160,8 @@
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		Function   & Gradient Descent & Newton’s method & Conjugate Gradient method \\ \hline
-		$f(x_1,x_2)$ & 8                & 4               & 170                       \\ \hline
-		$g(x_1,x_2)$ & 18               & 4               & 36                        \\ \hline
+		$f(x_1,x_2)$ & 11               & 1               & 8                       \\ \hline
+		$g(x_1,x_2)$ & 18               & 4               & 6                       \\ \hline
 	\end{tabular}
 \end{table}
 \end{document}

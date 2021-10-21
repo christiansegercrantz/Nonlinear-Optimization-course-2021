@@ -2,3 +2,4 @@
 [0m2021.10.21 11:08:29 INFO  time: initialize in 3.65s[0m
 [0m2021.10.21 11:08:30 WARN  Build server is not auto-connectable.[0m
 [0m2021.10.21 11:08:30 WARN  no build tool detected in workspace 'C:\Users\Chris\OneDrive\Documents\GitHub\Nonlinear-Optimization-course-2021\Homework 2'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.10.21 19:49:51 INFO  shutting down Metals[0m
