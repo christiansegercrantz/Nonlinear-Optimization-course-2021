@@ -98,5 +98,62 @@
 	
 	The direction $d$ that makes the function decrease must satisfy the condition $\nabla f(\bar{x})^\top d <0$.
 \subsection*{(c)}
-	To find the minimum for $f(x)$ in the direction d= $\begin{bmatrix}-1 \\ 1\end{bmatrix}$ we must calculate the step size $\bar{\lambda}=\text{argmin}_{\lambda} d^\top \nabla(x+ \lambda d)$. We can 
+	To find the minimum for $f(x)$ in the direction d= $\begin{bmatrix}1 \\ 0\end{bmatrix}$ we must calculate the step size $\bar{\lambda}=\text{argmin}_{\lambda} d^\top \nabla f(x+ \lambda d)$. 
+	\begin{align}
+		&\begin{bmatrix}
+			1 & 0
+		\end{bmatrix}
+		\nabla f
+		\left(\begin{bmatrix}
+			x_1 \\
+			x_2
+		\end{bmatrix}+
+		\lambda
+		\begin{bmatrix}
+			1 \\
+			 0
+		 \end{bmatrix}\right) \\
+	=&
+	 \begin{bmatrix}
+	 	1 & 0
+	 \end{bmatrix}
+	 \nabla f\left(
+	 \begin{bmatrix}
+	 	x_1+\lambda \\
+	 	x_2
+	 \end{bmatrix}\right) \\
+ 	=&
+	 \begin{bmatrix}
+ 		1 & 0
+ 	\end{bmatrix}
+	\begin{bmatrix}
+ 		4(x_1-\lambda)-x_2 -3+ 2 e^{2 (x_1-\lambda) + x_2 } \\
+ 		-(x_1-\lambda)+2x_2 + e^{2(x_1-\lambda)+x_2)}
+ 	\end{bmatrix} \\
+ 	 =&
+ 		-5\lambda-x_2 + 4x_1-3+ 2 e^{-2\lambda + 2 x_1 + x_2 } \\
+	\end{align}
+	In order to minimize it we take the derivative of the last line with regards to $\lambda$ and equal it to zero.
+	\begin{align}
+		 \frac{d}{d\lambda}\left(-5\lambda-x_2 + 4x_1-3+ 2 e^{-2\lambda + 2 x_1 + x_2 }\right) & = 0\\
+		 -5-e^{-2\lambda + 2 x_1 + x_2 } & = 0\\
+	\end{align}
+\section*{2.3}
+\begin{table}[H]
+	The code can be seen in the attached jupyter notebook.
+	The iterations of all three methods can be seen from Table \ref{tab:iterations}. Since they can easily been seen from the table, the answers have not been split into a-d parts.
+	
+	In the case of the Newton method, we are not only employing first-order derivative information but also second order derivative information. This leads to a more complex computations but need for less iterations. 
+	
+	For the Conjugate gradient method, 
+	\centering
+	\caption{The iterations for both functions f and g of exercise 2.3.}
+	\label{tab:iterations}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		Function   & Gradient Descent & Newton’s method & Conjugate Gradient method \\ \hline
+		$f(x_1,x_2)$ & 8                & 4               & 170                       \\ \hline
+		$g(x_1,x_2)$ & 18               & 4               & 36                        \\ \hline
+	\end{tabular}
+\end{table}
 \end{document}
