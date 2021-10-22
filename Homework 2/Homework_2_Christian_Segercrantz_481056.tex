@@ -11,7 +11,7 @@
 
 \graphicspath{ {plots/} }
 
-\title{Nonlinear Optimization - Homework 1 }
+\title{Nonlinear Optimization - Homework 2 }
 \author{Christian Segercrantz 481056}
 
 
@@ -38,7 +38,7 @@
 			3x_2^2-1
 		\end{bmatrix}.
 	\end{equation}
-	The first-order necessary condition is $\nabla f(\bar{x}) = 0$ for our unconstrained problem . We can solve the equations to get the critical points:
+	The first-order necessary condition is $\nabla f(\bar{x}) = 0$ for our unconstrained problem . We can solve the following equation since the equations are the same to get the critical points:
 	\begin{equation}
 		2x^2-1 = 0 \iff x= \pm\sqrt{1/3}.
 	\end{equation}
@@ -98,7 +98,7 @@
 	
 	The direction $d$ that makes the function decrease must satisfy the condition $\nabla f(\bar{x})^\top d <0$.
 \subsection*{(c)}
-	To find the minimum for $f(x)$ in the direction d= $\begin{bmatrix}1 \\ 0\end{bmatrix}$ we must calculate the step size $\bar{\lambda}=\text{argmin}_{\lambda} d^\top \nabla f(x+ \lambda d)$. 
+	To find the minimum for $f(\bar{x})$, where $\bar{x}=\begin{bmatrix}0 \\ 0\end{bmatrix}$, in the direction d= $\begin{bmatrix}1 \\ 0\end{bmatrix}$ we must calculate the step size $\bar{\lambda}=\text{argmin}_{\lambda} d^\top \nabla f(\bar{x}+ \lambda d)$. 
 	\begin{align}
 		\theta'(\lambda)= &\begin{bmatrix}
 			1 & 0
@@ -160,8 +160,8 @@
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		Function   & Gradient Descent & Newton’s method & Conjugate Gradient method \\ \hline
-		$f(x_1,x_2)$ & 11               & 1               & 8                       \\ \hline
-		$g(x_1,x_2)$ & 18               & 4               & 6                       \\ \hline
+		$f(7,3)$ & 11               & 1               & 8                       \\ \hline
+		$g(-4,-2)$ & 18             & 4               & 6                       \\ \hline
 	\end{tabular}
 \end{table}
 \end{document}
