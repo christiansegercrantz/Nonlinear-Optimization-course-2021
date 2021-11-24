@@ -57,9 +57,11 @@
 	The point $\bar{x}$ is a FJ point, since we can choose $u_1$ and $u_3$ such that FJ conditions are satisfied. U is thus $u= \begin{bmatrix} 0 \\ t \\ 0 \\ t\end{bmatrix},\quad t > 0$.
 \subsection*{c)}
 	The KKT conditions are
-	\begin{equation}
-		\nabla f(\bar{x}) + \sum_{i=1}^{m} u_i \nabla g_i(\bar{x}) = 0,
-	\end{equation}
+	\begin{alignat}{2}
+		&\nabla f(\bar{x}) + \sum_{i=1}^{m} u_i \nabla g_i(\bar{x}) = 0,\\
+		& u_i g_i(x) = 0 , & \forall i \\
+		& u_i \geq0, & \forall i
+	\end{alignat}
 	which gives us 
 	\begin{align}
 		&  \begin{bmatrix} -1 \\ 0 \end{bmatrix} + u_1 \begin{bmatrix} 0 \\ -1 \end{bmatrix} + u_3 \begin{bmatrix} 0 \\ 1 \end{bmatrix} \\
@@ -80,18 +82,27 @@
 \subsection*{a)}
 	\begin{alignat}{2}
 		\text{min. } & (x_1 +\frac{9}{4})^2 + (x_2 - 2)^2 \\
-		\text{subject to: } & x_2-x_1^2 \geq 0\\
-		& x_1 + x_2 \leq 6\\
-		& x_1 \geq 0\\
-		& x_2 \geq 0		
+		\text{subject to: } & x_2-x_1^2 \geq 0 \iff x_1^2-x_2 \leq 0\\
+		& x_1 + x_2 \leq 6 \iff  x_1 + x_2 - 6 \leq 0\\
+		& x_1 \geq 0 \iff -x_1 \leq 0\\
+		& x_2 \geq 0 \iff -x_2 \leq 0
 	\end{alignat}
 	The KKT conditions for the problem is
+	\begin{alignat}{2}
+		&\nabla f(\bar{x}) + \sum_{i=1}^{m} u_i \nabla g_i(\bar{x}) = 0 \label{eq:3.2a KKT cond 1}\\
+		& u_i g_i(x) = 0 , & \forall i \label{eq:3.2a KKT cond 2}\\
+		& u_i \geq0, & \forall i
+	\end{alignat}
+	From \ref{eq:3.2a KKT cond 2} we get the following at $\bar{x}$:
 	\begin{align}
-		0 = & \nabla f(\bar{x}) + \sum_{i=1}^{m} u_i \nabla g_i(\bar{x})\\
+		u_1\left(\left(\frac{3}{2}\right)^2 - 9/4\right) &= u_1 \cdot 0 = 0 \\
+		u_2\left(\frac{3}{2} + 9/4 - 6 \right) &= -\frac{9}{4}u_2 \implies u_2 = 0
+	\end{align}
+	\begin{align}
 		0 = & \begin{bmatrix} 2(\bar{x}_1 +\frac{9}{4}) \\ 2(\bar{x}_2 -2)\end{bmatrix} + u_1 \begin{bmatrix} -2\bar{x}_1 \\ 1 \end{bmatrix} + u_2 \begin{bmatrix} -1 \\ -1 \end{bmatrix} + u_3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + u_4 \begin{bmatrix} 0 \\ 1 \end{bmatrix}\\
 		0 = & \begin{bmatrix} 2(\frac{3}{2} +\frac{9}{4}) \\ 2(\frac{9}{4} -2)\end{bmatrix} + u_1 \begin{bmatrix} -2\frac{3}{2} \\ 1 \end{bmatrix} + u_2 \begin{bmatrix} -1 \\ -1 \end{bmatrix} + u_3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + u_4 \begin{bmatrix} 0 \\ 1 \end{bmatrix} \\
 		0 = & \begin{bmatrix}2(\frac{3}{2} +\frac{9}{4}) -\frac{7}{2}u_1 - u_2 +u_3 \\ 2(\frac{9}{4} -2) +u_1 -u_2 +u_4
-		 \end{bmatrix}
+		\end{bmatrix}
 	\end{align}
 \subsection*{b)}
 	\begin{figure}[H]
