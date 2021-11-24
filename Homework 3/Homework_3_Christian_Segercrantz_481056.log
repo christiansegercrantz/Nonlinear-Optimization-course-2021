@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.29)  17 NOV 2021 11:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.29)  23 NOV 2021 16:38
 entering extended mode
 **./Homework_3_Christian_Segercrantz_481056.tex
 (Homework_3_Christian_Segercrantz_481056.tex
@@ -310,37 +310,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <plots/3_1.png, id=8, 433.62pt x 289.08pt>
 File: plots/3_1.png Graphic file (type png)
 <use plots/3_1.png>
-Package pdftex.def Info: plots/3_1.png  used on input line 29.
+Package pdftex.def Info: plots/3_1.png  used on input line 30.
 (pdftex.def)             Requested size: 354.86412pt x 236.58838pt.
  [2 <./plots/3_1.png>]
-<plots/3_2.png, id=20, 433.62pt x 289.08pt>
+[3]
+<plots/3_2.png, id=23, 433.62pt x 289.08pt>
 File: plots/3_2.png Graphic file (type png)
 <use plots/3_2.png>
-Package pdftex.def Info: plots/3_2.png  used on input line 69.
+Package pdftex.def Info: plots/3_2.png  used on input line 98.
 (pdftex.def)             Requested size: 354.86412pt x 236.58838pt.
-
-[3 <./plots/3_2.png>] (Homework_3_Christian_Segercrantz_481056.aux) ) 
+ [4 <./plots/3_2.png>] [5] (Homework_3_Christian_Segercrantz_481056.aux) ) 
 Here is how much of TeX's memory you used:
  4679 strings out of 492453
  68789 string characters out of 3129819
- 150280 words of memory out of 3000000
+ 152280 words of memory out of 3000000
  8977 multiletter control sequences out of 15000+200000
  11195 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,15n,42p,323b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Homework_3_Christian_Segercrantz_481056.pdf (3 pages, 152339 
+ 46i,15n,42p,391b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on Homework_3_Christian_Segercrantz_481056.pdf (5 pages, 172686 
 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
