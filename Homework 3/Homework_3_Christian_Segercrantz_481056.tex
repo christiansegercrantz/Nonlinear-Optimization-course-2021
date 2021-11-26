@@ -96,23 +96,54 @@
 	From \ref{eq:3.2a KKT cond 2} we get the following at $\bar{x}$:
 	\begin{align}
 		u_1\left(\left(\frac{3}{2}\right)^2 - 9/4\right) &= u_1 \cdot 0 = 0 \\
-		u_2\left(\frac{3}{2} + 9/4 - 6 \right) &= -\frac{9}{4}u_2 \implies u_2 = 0
+		u_2\left(\frac{3}{2} + 9/4 - 6 \right) &= -\frac{9}{4}u_2 \implies u_2 = 0 \\
+		u_3 \left(-\frac{3}{2}\right) & = -\frac{3}{2}u_3 \implies u_3 = 0\\
+		u_4 \left(-\frac{9}{4}\right) & = -\frac{9}{4}u_4 \implies u_4 = 0
 	\end{align}
+	We can see that $u_2,u_3,u_4=0$ and the condition holds for $u_1\geq0$. Using this we can calculate the condition \ref{eq:3.2a KKT cond 1}.
 	\begin{align}
-		0 = & \begin{bmatrix} 2(\bar{x}_1 +\frac{9}{4}) \\ 2(\bar{x}_2 -2)\end{bmatrix} + u_1 \begin{bmatrix} -2\bar{x}_1 \\ 1 \end{bmatrix} + u_2 \begin{bmatrix} -1 \\ -1 \end{bmatrix} + u_3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + u_4 \begin{bmatrix} 0 \\ 1 \end{bmatrix}\\
-		0 = & \begin{bmatrix} 2(\frac{3}{2} +\frac{9}{4}) \\ 2(\frac{9}{4} -2)\end{bmatrix} + u_1 \begin{bmatrix} -2\frac{3}{2} \\ 1 \end{bmatrix} + u_2 \begin{bmatrix} -1 \\ -1 \end{bmatrix} + u_3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + u_4 \begin{bmatrix} 0 \\ 1 \end{bmatrix} \\
-		0 = & \begin{bmatrix}2(\frac{3}{2} +\frac{9}{4}) -\frac{7}{2}u_1 - u_2 +u_3 \\ 2(\frac{9}{4} -2) +u_1 -u_2 +u_4
+		0 = & \begin{bmatrix} 2(\bar{x}_1 -\frac{9}{4}) \\ 2(\bar{x}_2 -2)\end{bmatrix} + u_1 \begin{bmatrix} 2\bar{x}_1 \\ -1 \end{bmatrix} + u_2 \begin{bmatrix} -1 \\ -1 \end{bmatrix} + u_3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + u_4 \begin{bmatrix} 0 \\ 1 \end{bmatrix}\\
+		0 = & \begin{bmatrix} 2(\frac{3}{2} -\frac{9}{4}) \\ 2(\frac{9}{4} -2)\end{bmatrix} + u_1 \begin{bmatrix} 2\frac{3}{2} \\ -1 \end{bmatrix} \\
+		0 = & \begin{bmatrix}2(\frac{3}{2} +\frac{9}{4}) +3u_1 \\ 2(\frac{9}{4} -2) -u_1
 		\end{bmatrix}
 	\end{align}
+	Solving the system of equations above we see that $u_1 = \frac{1}{2}$ solves the problem.
 \subsection*{b)}
 	\begin{figure}[H]
 		\includegraphics[width=0.8\textwidth]{3_2.png}
 		\caption{}
 		\label{fig:2a}
 	\end{figure}
+\subsection*{c)}
+	For KKT conditions to be sufficient for global optimality, the feasible region and the objective function needs to be convex and Slater's QC needs to hold.
+	The hessian of the objective function is $H(f(x)) = \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$. Since it is positive semi-definite everywhere, the objective function is convex. The same can be seen for the first condition. Since the other conditions are linear, they are also convex. 
+	
+	For SQC to be satisfied, in addition to what is already shown above, we need to show that there exists a $x$ such that $g_i(x)<0$. We can see that for example $\begin{bmatrix}2 \\ 1\end{bmatrix}$ fulfills the needed condition for all conditions. 
+	
+	With this information we can conclude that the point is globally optimal.
 \section*{3.3 Lagrangian Dual of a Least-Squares Problem}
+\subsection*{a)}
 	\begin{alignat}{2}
 		\text{min. } & x^\top x \\
 		\text{subject to: } & Ax=b	
 	\end{alignat}
+	For our problem, The Lagrangian function and dual function becomes, since it has no inequality constraints,
+	\begin{align}
+		\phi(x,v) &= f(x) + v^\top h(x)\\
+		\theta(v) &= \text{inf}_x \{\phi(x,v): x\in \mathbb{R}^n\}
+	\end{align}
+	The Lagrangian dual problem thus becomes $\text{sup}_v\theta(v)$ subject to $v \geq 0$ or
+	\begin{align}
+		\text{sup}_v \text{inf}_x & \{x^\top x + v^\top(-Ax+b)\} \\
+		= \text{sup}_v \{\text{inf}_x&  \{x^\top x - v^\top Ax)\} +v^\top b\} \\
+		\text{s.t.} &\quad v \geq 0
+	\end{align}
+	Inside the infimum, we have $(x^\top - v^\top A)x$. This can be made arbitrarily small. In order for us to have a solution, we need to make $x^\top - v^\top A = 0$. Thus can the dual problem be written as:
+	\begin{align}
+		\text{sup} \quad & v^\top b \\
+		\text{s.t.} \quad & x^\top - v^\top A = 0\\
+		& v\geq 0\\
+		& v,x \in \mathbb{R}^n
+	\end{align}
+\subsection*{b)}
 \end{document}
