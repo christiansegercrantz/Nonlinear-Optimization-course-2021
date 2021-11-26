@@ -114,6 +114,7 @@
 		\caption{}
 		\label{fig:2a}
 	\end{figure}
+	From the picture we can see that the optimal point is in the feasible region. The only active constraint is $g_1$. The gradient of the objective function and the constraint is plotted at the optimal point and we can see that the of equal size and opposite directions. Thus, we can graphically conclude, that, at the point, KKT conditions hold.
 \subsection*{c)}
 	For KKT conditions to be sufficient for global optimality, the feasible region and the objective function needs to be convex and Slater's QC needs to hold.
 	The hessian of the objective function is $H(f(x)) = \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$. Since it is positive semi-definite everywhere, the objective function is convex. The same can be seen for the first condition. Since the other conditions are linear, they are also convex. 
@@ -146,4 +147,40 @@
 		& v,x \in \mathbb{R}^n
 	\end{align}
 \subsection*{b)}
+	Let us start by solving the dual variable $v$ by looking at the first constraint.
+	\begin{align}
+		x^\top - v^\top A &= 0\\
+		v^\top A &= x^\top \quad|\text{transpose}\\
+		A^\top v &= x\\
+		AA^\top v &= Ax\\
+		AA^\top v &= b\\
+		v &= (AA^\top)^{-1}b
+	\end{align}
+	We assumed, since $AA^\top$ is a $n$-by-$n$ square matrix, that it is invertible. From this we also get that $x=(AA^\top)^{-1}b A^\top$ from the original constraint equation. 
+	
+	For strong duality to hold we need to check a number of conditions. Firstly, if the set is a nonempty set. We know $x \in \mathbb{R}$, so the set is nonempty. Secondly, the objective function and the inequality constraints need to be convex. Since the objective function, $x^\top x$, is a quadratic function do we know that it's convex. Since there are no inequality constraints, we do not need to check that. Next, we need to check weather all equality constraints are affine. Since the only equality constraint is $b-Ax$, can we clearly see that it is affine as well. Finally, Slater's QC needs to be satisfied. We have already shown that most parts of Slater's QC are fulfilled, we only need to know weather there exists such a $x$ in the set that $g_i(x) < 0$. Since we have no inequality constraints, the condition is satisfied. Thus, Slater's QC holds, all the  conditions are satisfied and we know that the problem has strong duality.
+	
+\section*{3.4 Concavity of Lagrangian Dual Functions}
+	\begin{equation}
+		\theta(w) := \text{inf} \{f(x) + w^\top\beta(x): x\in X\}
+	\end{equation}
+	By the definition of a concave (or convex) function, the $f(\lambda x + (1-\lambda)y) \geq \lambda f(x) + (1-\lambda) f(y)$ where $\lambda \in [0,1]$. Let us start by calculating the left-hand side
+	\begin{equation}
+		\theta(\lambda w_1 + (1-\lambda)w_2) = \text{inf}\{f(x) + (\lambda w_1 + (1-\lambda)w_2)^\top \beta\}.
+	\end{equation}
+	We split $f(x) = \lambda f(x) + (1-\lambda)f(x)$, multiply in the $\beta$-term and continue our calculation
+	\begin{align}
+		\theta(\lambda w_1 + (1-\lambda)w_2) &= \text{inf}\{\lambda f(x) + (1-\lambda)f(x) + \lambda w_1^\top \beta + (1-\lambda)w_2^\top \beta\}\\
+		\theta(\lambda w_1 + (1-\lambda)w_2) &= \text{inf}\{\lambda (f(x)+w_1^\top \beta) +(1-\lambda)(f(x)+w_2^\top \beta) \}.
+	\end{align}
+	Since we know that infimum is a concave function we get
+	\begin{align}
+		\text{inf}\{\lambda (f(x)+w_1^\top \beta) +(1-\lambda)(f(x)+w_2^\top \beta) \} &\geq \lambda\text{inf}\{ (f(x)+w_1^\top \beta)\} +(1-\lambda)\text{inf}\{(f(x)+w_2^\top \beta)\}\\
+		&=\lambda \theta(w_1) + (1-\lambda)\theta(w_2).
+	\end{align}
+	This implies that 
+	\begin{equation}
+		\theta(\lambda w_1 + (1-\lambda)w_2) \geq \lambda \theta(w_1) + (1-\lambda)\theta(w_2),
+	\end{equation}
+	which shows that, according to the definition above, the function is concave.
 \end{document}
