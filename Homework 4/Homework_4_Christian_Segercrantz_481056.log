@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.29)  8 DEC 2021 10:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.29)  8 DEC 2021 12:34
 entering extended mode
-**./Homework_3_Christian_Segercrantz_481056.tex
-(Homework_3_Christian_Segercrantz_481056.tex
+**./Homework_4_Christian_Segercrantz_481056.tex
+(Homework_4_Christian_Segercrantz_481056.tex
 LaTeX2e <2019-10-01> patch level 1
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
@@ -185,8 +185,8 @@ Package: subcaption 2019/09/01 v1.3a Sub-captions (AR)
 \c@subfigure=\count108
 \c@subtable=\count109
 )
-(Homework_3_Christian_Segercrantz_481056.aux)
-\openout1 = `Homework_3_Christian_Segercrantz_481056.aux'.
+(Homework_4_Christian_Segercrantz_481056.aux)
+\openout1 = `Homework_4_Christian_Segercrantz_481056.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
@@ -306,29 +306,16 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Chris/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<plots/3_1.png, id=8, 433.62pt x 289.08pt>
-File: plots/3_1.png Graphic file (type png)
-<use plots/3_1.png>
-Package pdftex.def Info: plots/3_1.png  used on input line 30.
-(pdftex.def)             Requested size: 354.86412pt x 236.58838pt.
- [2 <./plots/3_1.png>]
-[3]
-<plots/3_2.png, id=23, 433.62pt x 289.08pt>
-File: plots/3_2.png Graphic file (type png)
-<use plots/3_2.png>
-Package pdftex.def Info: plots/3_2.png  used on input line 113.
-(pdftex.def)             Requested size: 354.86412pt x 236.58838pt.
- [4] [5 <./plots/3_2.png>] [6] [7]
-(Homework_3_Christian_Segercrantz_481056.aux) ) 
+{C:/Users/Chris/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
+(Homework_4_Christian_Segercrantz_481056.aux) ) 
 Here is how much of TeX's memory you used:
- 4681 strings out of 492453
- 68829 string characters out of 3129819
- 154297 words of memory out of 3000000
- 8979 multiletter control sequences out of 15000+200000
+ 4656 strings out of 492453
+ 68514 string characters out of 3129819
+ 152271 words of memory out of 3000000
+ 8958 multiletter control sequences out of 15000+200000
  11195 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,15n,42p,996b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,10n,42p,308b,204s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
@@ -338,12 +325,11 @@ amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb>
-Output written on Homework_3_Christian_Segercrantz_481056.pdf (7 pages, 188433 
+nts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on Homework_4_Christian_Segercrantz_481056.pdf (3 pages, 120108 
 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
+ 52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
