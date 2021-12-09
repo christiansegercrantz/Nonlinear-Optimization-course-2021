@@ -19,6 +19,7 @@
 	\maketitle
 	\pagebreak
 \section*{4.1 Frank-Wolfe Method}
+	The completed code can be seen from the attached file. Compared to the pseudo code found in the lecture slides, the algorithm did not result in the correct answer when using $\nabla f(x)^\top d^k$ but when using $\nabla f(x)^\top x$ as the objective value. At the first iteration $d^k=x$ since $x^k=0$, but from there this result seems odd. Using $d^k$ results in way faster convergence, but another optimal value.
 \section*{4.2 Interior-Point Method for Quadratic Problems}
 	The problem
 	\begin{alignat}{2}
@@ -89,7 +90,7 @@
 		\end{bmatrix} =
 		\begin{bmatrix}
 			Ax^{k}-b \\
-			A^\top x^k+ u^k -Qx^k-c\\
+			A^\top v^k+ u^k -Qx^k-c\\
 			X^k U^k e - \mu^{k+1}e
 		\end{bmatrix} = -
 		\begin{bmatrix}
@@ -102,7 +103,7 @@
 	\begin{equation}
 		\begin{cases}
 			Ad_x^{k+1} = Ax^{k}-b = -r_p \\
-			-Qd_x^{k+1}+A^\top d_v^{k+1} + Id_u = A^\top x^k+ u^k -Qx^k-c = -r_d\\
+			-Qd_x^{k+1}+A^\top d_v^{k+1} + Id_u = A^\top v^k+ u^k -Qx^k-c = -r_d\\
 			\bar{U}^kd_x + \bar{X}^kd_u= X^k U^k e - \mu^{k+1}e = -r_c
 		\end{cases}.
 	\end{equation}
@@ -114,10 +115,54 @@
 	By substituting this into third expression we get
 	\begin{align}
 		\bar{U}^kd_x + \bar{X}^kd_u &= -r_c\\
-		\bar{U}^kd_x - \bar{X}^k(r_d +Qd_x^{k+1}- A^\top d_v^{k+1}) &= -r_c\\
-		\bar{U}^kd_x - \bar{X}^kQd_x^{k+1} - \bar{X}^kr_d +\bar{X}^kA^\top d_v^{k+1} &= -r_c\\
-		(\bar{U}^k - \bar{X}^kQ)d_x^{k+1} &= -r_c + \bar{X}^kr_d -\bar{X}^kA^\top d_v^{k+1}\\
-		d_x^{k+1} &= (\bar{U}^k - \bar{X}^kQ) ^{-1}(-r_c + \bar{X}^kr_d -\bar{X}^kA^\top d_v^{k+1})
+		\bar{U}^kd_x - \bar{X}^k(r_d -Qd_x^{k+1} + A^\top d_v^{k+1}) &= -r_c\\
+		\bar{U}^kd_x + \bar{X}^kQd_x^{k+1} - \bar{X}^kr_d -\bar{X}^kA^\top d_v^{k+1} &= -r_c\\
+		(\bar{U}^k + \bar{X}^kQ)d_x^{k+1} &= -r_c + \bar{X}^kr_d +\bar{X}^kA^\top d_v^{k+1}\\
+		d_x^{k+1} &= (\bar{U}^k - \bar{X}^kQ) ^{-1}(-r_c + \bar{X}^kr_d +\bar{X}^kA^\top d_v^{k+1}) \label{eq:d_x}
 	\end{align}
-	From the first expression we know that	$Ad_x^{k+1}  = -r_p$
+	From the first expression we know that	$Ad_x^{k+1}  = -r_p$, thus by multiplying the Equation \ref{eq:d_x} by $A$ we get that 
+	\begin{equation}
+		Ad_x^{k+1} = A(\bar{U}^k + \bar{X}^kQ) ^{-1}(-r_c + \bar{X}^kr_d + \bar{X}^kA^\top d_v^{k+1}) = -r_p
+	\end{equation}
+	from which we can solve $d_v^{k+1}$ as 
+	\begin{align}
+		-r_p &= A(\bar{U}^k + \bar{X}^kQ)^{-1}(-r_c + \bar{X}^kr_d +\bar{X}^kA^\top d_v^{k+1})\\
+		-r_p &= -A(\bar{U}^k + \bar{X}^kQ)^{-1}r_c + A(\bar{U}^k + \bar{X}^kQ)^{-1}\bar{X}^kr_d +A(\bar{U}^k + \bar{X}^kQ)^{-1}\bar{X}^kA^\top d_v^{k+1}\\
+		A(\bar{U}^k + \bar{X}^kQ)^{-1}\bar{X}^kA^\top d_v^{k+1} &= -r_p + A(\bar{U}^k + \bar{X}^kQ)^{-1}r_c - A(\bar{U}^k + \bar{X}^kQ)^{-1}\bar{X}^kr_d	\\
+ 		d_v^{k+1} &= (A(\bar{U}^k + \bar{X}^kQ)^{-1}\bar{X}^kA^\top)^{-1}(-r_p + A(\bar{U}^k + \bar{X}^kQ)^{-1}r_c - A(\bar{U}^k + \bar{X}^kQ)^{-1}\bar{X}^kr_d)	\\
+ 		d_v^{k+1} &= (A(\bar{U}^k + \bar{X}^kQ)^{-1}\bar{X}^kA^\top)^{-1}(-r_p + A(\bar{U}^k + \bar{X}^kQ)^{-1}(r_c - Xr_d))	
+	\end{align}
+	We know how a solution for $d_v^{k+1}$ which we can substitute into the earlier expressions for $d_x^{k+1} $ and $ d_u^{k+1}$. The trajectory of the algorithm can be seen in Figure \ref{fig:2d}.
+\subsection*{d)}
+	Using the provided skeleton and earlier results, we obtain the solution $x\approx\begin{bmatrix}0.905 & 0.819\end{bmatrix}^\top$ after 6 iterations. 
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{qp_convergence.png}
+		\caption{The trajectory the x-values gotten from the interior-point method algorithm used.}
+		\label{fig:2d}
+	\end{figure}
+\section*{4.3 Sequential Quadratic Programming}
+	\subsection*{a)}
+	Using the skeleton and lecture notes 11 we can create the algorithm. The algorithm can be seen in the attached file. It seems using the default values for the trust region $\Delta$ and the penalty term $\mu$ seem to be enough for the algorithm to converge. The plot is made using the default values. Some additional values were tested, e.g. $\Delta=0.5$ and $\mu=1$ did not result in convergence while very large values $\Delta=1000$ and $\mu=1000$ did result in convergence. Plots of the aforementioned examples can be seen in Figure \ref{fig:3_extra}. We can see that the default values seem to provide the best result.
+	\subsection*{b)}
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{SQP_example.png}
+		\caption{The trajectory the x-values take, gotten from the interior-point method algorithm used. The feasible area is also highlighted}
+		\label{fig:3b}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{SQP_example_small}
+			\caption{$\Delta=0.5$, $\mu=1$}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{SQP_example_large}
+			\caption{$\Delta=1000$, $\mu=1000$}
+		\end{subfigure}
+		\caption{Trejectory plots of alternative trust region $\Delta$ and the penalty term $\mu$ values.}
+		\label{fig:3_extra}
+	\end{figure}
 \end{document}
